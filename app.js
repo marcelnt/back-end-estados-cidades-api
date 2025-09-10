@@ -32,7 +32,7 @@ app.get('/v1/estados' , function (request, response){
     response.json(dados.getEstados())
 })
 
-app.get('/v1/estados/:sigla' , function (request, response){
+app.get('/v1/estado/:sigla' , function (request, response){
     let dados = estados
     let sigla = request.params
     let estadosJSON = dados.getSiglaEstado(sigla)
@@ -41,7 +41,7 @@ app.get('/v1/estados/:sigla' , function (request, response){
     response.json(estadosJSON)
 })
 
-app.get('/v1/capital/estados/:sigla' , function (request, response){
+app.get('/v1/capital/estado/:sigla' , function (request, response){
     let dados = estados
     let sigla = request.params
     let estadosJSON = dados.getCapitalEstado(sigla) 
@@ -62,7 +62,7 @@ app.get('/v1/regiao/estados/:regiao' , function (request, response){
 
 })
 
-app.get('/v1/cidades/estados/:sigla' , function (request, response){
+app.get('/v1/cidades/estado/:sigla' , function (request, response){
     let dados = estados
     let sigla = request.params
 
