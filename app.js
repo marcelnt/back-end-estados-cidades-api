@@ -79,7 +79,7 @@ app.get('/v1/api/help-estados/' , function (request, response){
                 "/v1/api/estados/:sigla":           "Lista dados referente a um unico estado",
                 "/v1/api/capital/estados/:sigla":   "Lista dados referente a capital de um unico estado",
                 "/v1/api/regiao/estados/:regiao":   "Lista dados de estados referente a uma unica região",
-                "'/v1/api/cidades/estados/:sigla":  "Lista as cidades de um estado"
+                "/v1/api/cidades/estados/:sigla":   "Lista as cidades de um estado"
            
     }
        
