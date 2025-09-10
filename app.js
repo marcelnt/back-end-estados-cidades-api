@@ -28,7 +28,7 @@ app.use((request, response, next) =>{
 app.get('/v1/estados' , function (request, response){
     let dados = estados
     
-    response.status(dados.getEstados().statuscode)
+    response.status(dados.getEstados().status_code)
     response.json(dados.getEstados())
 })
 
