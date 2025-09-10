@@ -75,7 +75,7 @@ app.get('/v1/api/cidades/estados/:sigla' , function (request, response){
 
 app.get('/v1/api/help-estados/' , function (request, response){
     let JSON = {
-                "/v1/api/estados":                  "Lista todos os estado",
+                "/v1/api/estados":                  "Lista todos os estados",
                 "/v1/api/estados/:sigla":           "Lista dados referente a um unico estado",
                 "/v1/api/capital/estados/:sigla":   "Lista dados referente a capital de um unico estado",
                 "/v1/api/regiao/estados/:regiao":   "Lista dados de estados referente a uma unica região",
