@@ -25,14 +25,14 @@ app.use((request, response, next) =>{
     next()
 })
 
-app.get('/v1/estados' , function (request, response){
+app.get('/v1/api/estados' , function (request, response){
     let dados = estados
     
     response.status(dados.getEstados().status_code)
     response.json(dados.getEstados())
 })
 
-app.get('/v1/estado/:sigla' , function (request, response){
+app.get('/v1/api/estados/:sigla' , function (request, response){
     let dados = estados
     let sigla = request.params
     let estadosJSON = dados.getSiglaEstado(sigla)
@@ -41,7 +41,7 @@ app.get('/v1/estado/:sigla' , function (request, response){
     response.json(estadosJSON)
 })
 
-app.get('/v1/capital/estado/:sigla' , function (request, response){
+app.get('/v1/api/capital/estados/:sigla' , function (request, response){
     let dados = estados
     let sigla = request.params
     let estadosJSON = dados.getCapitalEstado(sigla) 
@@ -50,7 +50,7 @@ app.get('/v1/capital/estado/:sigla' , function (request, response){
     response.json(estadosJSON)
 })
 
-app.get('/v1/regiao/estados/:regiao' , function (request, response){
+app.get('/v1/api/regiao/estados/:regiao' , function (request, response){
     let dados = estados
     let regiao = request.params
 
@@ -62,7 +62,7 @@ app.get('/v1/regiao/estados/:regiao' , function (request, response){
 
 })
 
-app.get('/v1/cidades/estado/:sigla' , function (request, response){
+app.get('/v1/api/cidades/estados/:sigla' , function (request, response){
     let dados = estados
     let sigla = request.params
 
@@ -70,6 +70,23 @@ app.get('/v1/cidades/estado/:sigla' , function (request, response){
 
     response.status(estadosJSON.status_code)
     response.json(estadosJSON)
+
+})
+
+app.get('/v1/api/help-estados/' , function (request, response){
+    let JSON = {
+                "/v1/api/estados":                  "Lista todos os estado",
+                "/v1/api/estados/:sigla":           "Lista dados referente a um unico estado",
+                "/v1/api/capital/estados/:sigla":   "Lista dados referente a capital de um unico estado",
+                "/v1/api/regiao/estados/:regiao":   "Lista dados de estados referente a uma unica região",
+                "'/v1/api/cidades/estados/:sigla":  "Lista as cidades de um estado"
+           
+    }
+       
+
+
+    response.status(200)
+    response.json(JSON)
 
 })
 
